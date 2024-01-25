@@ -59,7 +59,6 @@ def run_app(
     )
 
     args = dict(
-        debug=debug,
         threaded=False,
         host=host,
         port=port,
