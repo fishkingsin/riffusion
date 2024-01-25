@@ -13,7 +13,6 @@ from pathlib import Path
 import dacite
 import flask
 import PIL
-from flask_cors import CORS
 
 from riffusion.datatypes import InferenceInput, InferenceOutput
 from riffusion.riffusion_pipeline import RiffusionPipeline
@@ -21,9 +20,10 @@ from riffusion.spectrogram_image_converter import SpectrogramImageConverter
 from riffusion.spectrogram_params import SpectrogramParams
 from riffusion.util import base64_util
 
-# Flask app with CORS
+from flask_ngrok import run_with_ngrok
+
 app = flask.Flask(__name__)
-CORS(app)
+run_with_ngrok(app)
 
 # Log at the INFO level to both stdout and disk
 logging.basicConfig(level=logging.INFO)
