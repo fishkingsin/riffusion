@@ -91,8 +91,8 @@ class SpectrogramConverter:
             f_min=params.min_frequency,
             f_max=params.max_frequency,
             norm=params.mel_scale_norm,
-            mel_scale=params.mel_scale_type)
-        ).to(self.device)
+            mel_scale=params.mel_scale_type
+            ).to(self.device)
 
     def spectrogram_from_audio(
         self,
