@@ -58,17 +58,11 @@ def run_app(
         device=device,
     )
 
-    args = dict(
-        threaded=False,
-        host=host,
-        port=port,
-    )
-
     if ssl_certificate:
         assert ssl_key is not None
         args["ssl_context"] = (ssl_certificate, ssl_key)
 
-    app.run(**args)  # type: ignore
+    app.run()  # type: ignore
 
 
 @app.route("/run_inference/", methods=["POST"])
